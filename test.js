@@ -44,14 +44,6 @@ describe('emailExistence', function() {
         });
     });
     
-        it('recognizes gmail+', function(done) {
-        this.timeout(30e3);
-        emailExistence('sitesda32@gmail.com', function(err, valid) {
-            expect(err).to.match(null);
-            expect(valid).to.be(true);
-            done();
-        });
-    });
 
     it('fails on unrecognized domain', function(done) {
         this.timeout(30e3);
@@ -62,41 +54,7 @@ describe('emailExistence', function() {
         });
     });
 
-    it('fails on unrecognized domain', function(done) {
-        this.timeout(30e3);
-        emailExistence('sitesda32@gmail.com', function(err, valid) {
-            expect(valid).to.be(false);
-            // expect(err.message).to.match(/ENOTFOUND/);
-            done();
-        });
-    });
 
-        it('fails on unrecognized domain', function(done) {
-        this.timeout(30e3);
-        emailExistence('contact@spdartes.net', function(err, valid) {
-            expect(valid).to.be(false);
-            // expect(err.message).to.match(/ENOTFOUND/);
-            done();
-        });
-    });
-    
-            it('fails on unrecognized domain', function(done) {
-        this.timeout(30e3);
-        emailExistence('contact@spdartes.net', function(err, valid) {
-            expect(valid).to.be(false);
-            // expect(err.message).to.match(/ENOTFOUND/);
-            done();
-        });
-    });
-    
-                it('fails on unrecognized domain', function(done) {
-        this.timeout(30e3);
-        emailExistence('contact@spdartes.net', function(err, valid) {
-            expect(valid).to.be(false);
-            // expect(err.message).to.match(/ENOTFOUND/);
-            done();
-        });
-    });
     
         it('fails on non-existent address', function(done) {
         this.timeout(30e3);
@@ -107,42 +65,7 @@ describe('emailExistence', function() {
         });
     });
     
-    it('fails on non-existent address', function(done) {
-        this.timeout(30e3);
-        emailExistence('sitesda3@gmail.com', function(err, valid) {
-            // expect(err).to.match(/^550/);
-            expect(valid).to.be(false);
-            done();
-        });
-    });
-
-    it('fails on non-existent name', function(done) {
-        this.timeout(30e3);
-        emailExistence('contact@spdartes.net', function(err, valid) {
-            // expect(err).to.match(/^550/);
-            expect(valid).to.be(false);
-            done();
-        });
-    });
-    
-        it('fails on non-existent name', function(done) {
-        this.timeout(30e3);
-        emailExistence('contact@spdartes.net', function(err, valid) {
-            // expect(err).to.match(/^550/);
-            expect(valid).to.be(false);
-            done();
-        });
-    });
-    
-        it('fails on non-existent name', function(done) {
-        this.timeout(30e3);
-        emailExistence('contact@spdartes.net', function(err, valid) {
-            // expect(err).to.match(/^550/);
-            expect(valid).to.be(true);
-            done();
-        });
-    });
-    
+ 
         it('fails on non-existent name', function(done) {
         this.timeout(30e3);
         emailExistence('sitesda3@gmail.com', function(err, valid) {
@@ -161,14 +84,6 @@ describe('emailExistence', function() {
       });
     });
     
-    it('recognizes valid hotmail', function(done) {
-      this.timeout(30e3);
-      emailExistence('contact@spdartes.net', function(err, valid) {
-        expect(err).to.match(null);
-        expect(valid).to.be(true);
-        done(err);
-      });
-    });
     
 });
    
