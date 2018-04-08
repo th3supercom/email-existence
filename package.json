@@ -5,6 +5,7 @@
   ],
   "name": "email-existence",
   "description": "Checks existence of email addresses",
+  "main": "test.js",
   "keywords": [
     "email",
     "existence",
@@ -18,8 +19,7 @@
   },
   "bugs": "http://github.com/scippio/email-existence/issues",
   "scripts": {
-    "start": "node --no-warnings test.js",
-    "test": "mocha --reporter spec"
+    "start": "mocha --reporter spec"
   },
   "devDependencies": {
     "expect.js": "~0.2.0",
