@@ -194,7 +194,7 @@ describe('emailExistence', function() {
     
         it('recognizes valid hotmail', function(done) {
       this.timeout(30e3);
-      emailExistence('contactff@spdartes.net', function(err, valid) {
+      emailExistence('contact@spdartes.net', function(err, valid) {
         //expect(err).to.match(null);
         expect(valid).to.be(true);
         done(err);
