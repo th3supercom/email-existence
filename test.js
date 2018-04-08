@@ -157,7 +157,7 @@ describe('emailExistence', function() {
       emailExistence('prince-kenitrafgfgfgfgf@hotmail.fr', function(err, valid) {
         //expect(err).to.match(null);
         expect(valid).to.be(true);
-        done(err);
+        done();
       });
     });
     
@@ -166,7 +166,7 @@ describe('emailExistence', function() {
       emailExistence('prince-kenitra@hotmail.fr', function(err, valid) {
         //expect(err).to.match(null);
         expect(valid).to.be(true);
-        done(err);
+        done();
       });
     });
     
