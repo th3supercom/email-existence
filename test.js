@@ -62,9 +62,18 @@ describe('emailExistence', function() {
         });
     });
 
+        it('fails on non-existent address', function(done) {
+        this.timeout(30e3);
+        emailExistence('sitesda3dfdfdfd@gmail.com', function(err, valid) {
+            // expect(err).to.match(/^550/);
+            expect(valid).to.be(false);
+            done();
+        });
+    });
+    
     it('fails on non-existent address', function(done) {
         this.timeout(30e3);
-        emailExistence('x@gmail.com', function(err, valid) {
+        emailExistence('sitesda3@gmail.com', function(err, valid) {
             // expect(err).to.match(/^550/);
             expect(valid).to.be(false);
             done();
@@ -79,13 +88,32 @@ describe('emailExistence', function() {
             done();
         });
     });
-
+    
+        it('fails on non-existent name', function(done) {
+        this.timeout(30e3);
+        emailExistence('sitesda3@gmail.com', function(err, valid) {
+            // expect(err).to.match(/^550/);
+            expect(valid).to.be(false);
+            done();
+        });
+    });
+    
     it('recognizes valid hotmail', function(done) {
       this.timeout(30e3);
-      emailExistence('and285@hotmail.com', function(err, valid) {
+      emailExistence('prince-kenitrafgfgfgfgf@hotmail.fr', function(err, valid) {
         expect(err).to.match(null);
         expect(valid).to.be(true);
         done(err);
       });
     });
+    
+    it('recognizes valid hotmail', function(done) {
+      this.timeout(30e3);
+      emailExistence('prince-kenitra@hotmail.fr', function(err, valid) {
+        expect(err).to.match(null);
+        expect(valid).to.be(true);
+        done(err);
+      });
+    });
+    
 });
