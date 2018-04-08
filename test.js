@@ -2,7 +2,7 @@ var emailExistence = require('./index');
 
 
 
-/*
+
 var expect = require('expect.js');
 
 describe('emailExistence', function() {
@@ -30,7 +30,7 @@ describe('emailExistence', function() {
         done();
     });
 
-    it('recognizes andreas', function(done) {
+ /*   it('recognizes andreas', function(done) {
         this.timeout(30e3);
         emailExistence('andreas.brekken@gmail.com', function(err, valid) {
             expect(err).to.match(null);
@@ -190,7 +190,7 @@ describe('emailExistence', function() {
         expect(valid).to.be(true);
         done(err);
       });
-    });
+    });*/
     
         it('recognizes valid hotmail', function(done) {
       this.timeout(30e3);
@@ -202,7 +202,7 @@ describe('emailExistence', function() {
     });
     
 });
-*/
+
 
 
 
