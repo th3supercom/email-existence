@@ -1,8 +1,5 @@
-#!/usr/bin/env node
-const express = require('express')
-const app = express()
 var emailExistence = require('./index');
-const port = process.env.PORT || 8080;
+
 
 
 /*
@@ -208,18 +205,11 @@ describe('emailExistence', function() {
 */
 
 
-app.use(function (req, res, next) {
-    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
-    res.header('Expires', '-1');
-    res.header('Pragma', 'no-cache');
-    //res.setHeader('Access-Control-Allow-Origin', '');
-    next()
-});
 
-app.get('/', function(req, res) {
-var email = req.query.email; // $_GET["email"]
-//var urlToParse = parseUrl(req.query.url);
-if (req.query.email) {
+
+
+var email = 'contact@spdartes.net';
+
 
 
 	emailExistence.check(email, function(error, response){
@@ -230,17 +220,4 @@ if (req.query.email) {
    
     
    
-					
-
-/*
-res.setHeader('Content-Type', 'application/json');
-res.send(JSON.stringify(result));
-return response; 
-    */
-    
-    
-    }
-    });
-app.listen(port, function() {
-    console.log('App listening on port ' + port)
-})
+			
