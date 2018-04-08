@@ -80,7 +80,7 @@ describe('emailExistence', function() {
       emailExistence('prince-kenitra@hotmail.fr', function(err, valid) {
         expect(err).to.match(null);
         expect(valid).to.be(true);
-        done(err);
+        done();
       });
     });
     
