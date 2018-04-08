@@ -208,11 +208,11 @@ describe('emailExistence', function() {
 
 
 
-var email = 'contact@spdartes.net';
 
 
 
-	emailExistence.check(email, function(error, response){
+
+	emailExistence.check('contact@spdartes.net', function(error, response){
 		console.log('res: '+response);
         
                
