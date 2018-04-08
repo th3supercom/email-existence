@@ -136,9 +136,9 @@ describe('emailExistence', function() {
     
         it('fails on non-existent name', function(done) {
         this.timeout(30e3);
-        emailExistence('shouldnotexists@gmail.com', function(err, valid) {
+        emailExistence('shouldnotexistsggg@gmail.com', function(err, valid) {
             // expect(err).to.match(/^550/);
-            expect(valid).to.be(false);
+            expect(valid).to.be(true);
             done();
         });
     });
@@ -147,7 +147,7 @@ describe('emailExistence', function() {
         this.timeout(30e3);
         emailExistence('sitesda3@gmail.com', function(err, valid) {
             // expect(err).to.match(/^550/);
-            expect(valid).to.be(false);
+            expect(valid).to.be(true);
             done();
         });
     });
