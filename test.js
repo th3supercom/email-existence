@@ -1,6 +1,10 @@
+#!/usr/bin/env node
 const express = require('express')
 const app = express()
 var emailExistence = require('./index');
+const port = process.env.PORT || 8080;
+
+
 /*
 var expect = require('expect.js');
 
@@ -237,3 +241,6 @@ return response;
     
     }
     });
+app.listen(port, function() {
+    console.log('App listening on port ' + port)
+})
