@@ -37,7 +37,7 @@ describe('emailExistence', function() {
 
     it('recognizes gmail+', function(done) {
         this.timeout(30e3);
-        emailExistence('andreas.brekken+spam@gmail.com', function(err, valid) {
+        emailExistence('sitesda32@gmail.com', function(err, valid) {
             expect(err).to.match(null);
             expect(valid).to.be(true);
             done();
@@ -46,7 +46,7 @@ describe('emailExistence', function() {
     
         it('recognizes gmail+', function(done) {
         this.timeout(30e3);
-        emailExistence('sitesda3@gmail.com', function(err, valid) {
+        emailExistence('sitesda3ffg@gmail.com', function(err, valid) {
             expect(err).to.match(null);
             expect(valid).to.be(true);
             done();
