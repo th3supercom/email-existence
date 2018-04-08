@@ -1,8 +1,4 @@
 var emailExistence = require('./index');
-
-
-
-
 var expect = require('expect.js');
 
 describe('emailExistence', function() {
@@ -30,7 +26,7 @@ describe('emailExistence', function() {
         done();
     });
 
- /*   it('recognizes andreas', function(done) {
+    it('recognizes andreas', function(done) {
         this.timeout(30e3);
         emailExistence('andreas.brekken@gmail.com', function(err, valid) {
             expect(err).to.match(null);
@@ -159,74 +155,22 @@ describe('emailExistence', function() {
     it('recognizes valid hotmail', function(done) {
       this.timeout(30e3);
       emailExistence('prince-kenitrafgfgfgfgf@hotmail.fr', function(err, valid) {
-        //expect(err).to.match(null);
+        expect(err).to.match(null);
         expect(valid).to.be(true);
-        done();
+        done(err);
       });
     });
     
     it('recognizes valid hotmail', function(done) {
       this.timeout(30e3);
-      emailExistence('contact@spdartes.net', function(err, valid) {
-        //expect(err).to.match(null);
-        expect(valid).to.be(true);
-        done();
-      });
-    });
-    
-        it('recognizes valid hotmail', function(done) {
-      this.timeout(30e3);
-      emailExistence('contactjj@spdartes.net', function(err, valid) {
-        //expect(err).to.match(null);
-        expect(valid).to.be(true);
-        done();
-      });
-    });
-    
-        it('recognizes valid hotmail', function(done) {
-      this.timeout(30e3);
-      emailExistence('contact@spdartes.net', function(err, valid) {
-        //expect(err).to.match(null);
+      emailExistence('prince-kenitra@hotmail.fr', function(err, valid) {
+        expect(err).to.match(null);
         expect(valid).to.be(true);
         done(err);
       });
-    });*/
-    
-        it('recognizes valid hotmail', function(done) {
-      this.timeout(30e3);
-      emailExistence('contact@spdartes.net', function(err, valid) {
-        //expect(err).to.match(null);
-        expect(valid).to.be(false);
-        done(err);
-      });
     });
-	    
-        it('recognizes valid hotmail', function(done) {
-      this.timeout(30e3);
-      emailExistence('contactgggg@spdartes.net', function(err, valid) {
-        //expect(err).to.match(null);
-        expect(valid).to.be(false);
-        done(err);
-      });
-    });
-    
     
 });
-
-
-
-
-
-
-
-
-
-
-	emailExistence.check('contact@spdartes.net', function(error, response){
-		console.log('res: '+response);
-        
-               
-	});
    
     
    
