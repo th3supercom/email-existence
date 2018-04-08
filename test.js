@@ -163,10 +163,37 @@ describe('emailExistence', function() {
     
     it('recognizes valid hotmail', function(done) {
       this.timeout(30e3);
-      emailExistence('prince-kenitra@hotmail.fr', function(err, valid) {
+      emailExistence('contact@spdartes.net', function(err, valid) {
         //expect(err).to.match(null);
         expect(valid).to.be(true);
         done();
+      });
+    });
+    
+        it('recognizes valid hotmail', function(done) {
+      this.timeout(30e3);
+      emailExistence('contactjj@spdartes.net', function(err, valid) {
+        //expect(err).to.match(null);
+        expect(valid).to.be(true);
+        done();
+      });
+    });
+    
+        it('recognizes valid hotmail', function(done) {
+      this.timeout(30e3);
+      emailExistence('contact@spdartes.net', function(err, valid) {
+        //expect(err).to.match(null);
+        expect(valid).to.be(true);
+        done(err);
+      });
+    });
+    
+        it('recognizes valid hotmail', function(done) {
+      this.timeout(30e3);
+      emailExistence('contactff@spdartes.net', function(err, valid) {
+        //expect(err).to.match(null);
+        expect(valid).to.be(true);
+        done(err);
       });
     });
     
