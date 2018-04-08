@@ -47,7 +47,7 @@ describe('emailExistence', function() {
 
     it('fails on unrecognized domain', function(done) {
         this.timeout(30e3);
-        emailExistence('sitesda32@gmail.com', function(err, valid) {
+        emailExistence('contact@spdartes.net', function(err, valid) {
             expect(valid).to.be(true);
             // expect(err.message).to.match(/ENOTFOUND/);
             done();
