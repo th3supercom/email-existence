@@ -1,4 +1,5 @@
 var emailExistence = require('./index');
+/*
 var expect = require('expect.js');
 
 describe('emailExistence', function() {
@@ -86,7 +87,7 @@ describe('emailExistence', function() {
     
     
 });
-   
+   */
   	emailExistence.check('contact@spdartes.net', function(error, response){
 		console.log('res: '+response);
 	});  
