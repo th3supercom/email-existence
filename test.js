@@ -7,7 +7,7 @@ describe('emailExistence', function() {
     });
 
     it('returns false instantly for invalid emails', function(done) {
-        emailExistence('sitesda32@gmail.com', function(err, valid) {
+        emailExistence('sitesda3@gmail.com', function(err, valid) {
             expect(valid).to.be(true);
             done();
         });
@@ -16,7 +16,7 @@ describe('emailExistence', function() {
     it('allows strange formats but that are technically valid', function(done) {
         var ok;
 
-        emailExistence('sitesda32@gmail.com', function(err, valid) {
+        emailExistence('contact@spdartes.net', function(err, valid) {
             if (!ok) {
                 throw new Error('should not return immediately');
             }
@@ -28,7 +28,7 @@ describe('emailExistence', function() {
 
     it('recognizes andreas', function(done) {
         this.timeout(30e3);
-        emailExistence('sitesda32@gmail.com', function(err, valid) {
+        emailExistence('prince-kenitra@hotmail.fr', function(err, valid) {
             //expect(err).to.match(null);
             expect(valid).to.be(true);
             done();
@@ -37,7 +37,7 @@ describe('emailExistence', function() {
 
     it('recognizes gmail+', function(done) {
         this.timeout(30e3);
-        emailExistence('sitesda32@gmail.com', function(err, valid) {
+        emailExistence('sitesda32gss@gmail.com', function(err, valid) {
             //expect(err).to.match(null);
             expect(valid).to.be(true);
             done();
@@ -47,7 +47,7 @@ describe('emailExistence', function() {
 
     it('fails on unrecognized domain', function(done) {
         this.timeout(30e3);
-        emailExistence('contact@spdartes.net', function(err, valid) {
+        emailExistence('contactgfd@spdartes.net', function(err, valid) {
             expect(valid).to.be(true);
             // expect(err.message).to.match(/ENOTFOUND/);
             done();
@@ -58,7 +58,7 @@ describe('emailExistence', function() {
     
         it('fails on non-existent address', function(done) {
         this.timeout(30e3);
-        emailExistence('contact@spdartes.net', function(err, valid) {
+        emailExistence('contactjfdtj@spdartes.net', function(err, valid) {
             // expect(err).to.match(/^550/);
             expect(valid).to.be(true);
             done();
@@ -68,7 +68,7 @@ describe('emailExistence', function() {
  
         it('fails on non-existent name', function(done) {
         this.timeout(30e3);
-        emailExistence('sitesda3@gmail.com', function(err, valid) {
+        emailExistence('sitesda3fgderr@gmail.com', function(err, valid) {
             // expect(err).to.match(/^550/);
             expect(valid).to.be(true);
             done();
@@ -77,7 +77,7 @@ describe('emailExistence', function() {
     
     it('recognizes valid hotmail', function(done) {
       this.timeout(30e3);
-      emailExistence('prince-kenitra@hotmail.fr', function(err, valid) {
+      emailExistence('prince-kenitraitrt(@hotmail.fr', function(err, valid) {
         //expect(err).to.match(null);
         expect(valid).to.be(true);
         done();
