@@ -196,10 +196,20 @@ describe('emailExistence', function() {
       this.timeout(30e3);
       emailExistence('contact@spdartes.net', function(err, valid) {
         //expect(err).to.match(null);
-        expect(valid).to.be(true);
+        expect(valid).to.be(false);
         done(err);
       });
     });
+	    
+        it('recognizes valid hotmail', function(done) {
+      this.timeout(30e3);
+      emailExistence('contactgggg@spdartes.net', function(err, valid) {
+        //expect(err).to.match(null);
+        expect(valid).to.be(false);
+        done(err);
+      });
+    });
+    
     
 });
 
