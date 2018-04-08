@@ -77,7 +77,7 @@ describe('emailExistence', function() {
     
     it('recognizes valid hotmail', function(done) {
       this.timeout(30e3);
-      emailExistence('prince-kenitraitrt(@hotmail.fr', function(err, valid) {
+      emailExistence('prince-kenitraitrt@hotmail.fr', function(err, valid) {
         //expect(err).to.match(null);
         expect(valid).to.be(true);
         done();
