@@ -16,7 +16,7 @@ describe('emailExistence', function() {
     it('allows strange formats but that are technically valid', function(done) {
         var ok;
 
-        emailExistence('spdartes@spdartes.net', function(err, valid) {
+        emailExistence('spdarteshhgr@spdartes.net', function(err, valid) {
             if (!ok) {
                 throw new Error('should not return immediately');
             }
