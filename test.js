@@ -1,4 +1,7 @@
+const express = require('express')
+const app = express()
 var emailExistence = require('./index');
+/*
 var expect = require('expect.js');
 
 describe('emailExistence', function() {
@@ -198,3 +201,39 @@ describe('emailExistence', function() {
     });
     
 });
+*/
+
+
+app.use(function (req, res, next) {
+    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    res.header('Expires', '-1');
+    res.header('Pragma', 'no-cache');
+    //res.setHeader('Access-Control-Allow-Origin', '');
+    next()
+});
+
+app.get('/', function(req, res) {
+var email = req.query.email; // $_GET["email"]
+//var urlToParse = parseUrl(req.query.url);
+if (req.query.email) {
+
+
+	emailExistence.check(email, function(error, response){
+		console.log('res: '+response);
+        
+               
+	});
+   
+    
+   
+					
+
+/*
+res.setHeader('Content-Type', 'application/json');
+res.send(JSON.stringify(result));
+return response; 
+    */
+    
+    
+    }
+    });
