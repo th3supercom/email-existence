@@ -87,6 +87,8 @@ describe('emailExistence', function() {
     
 });
    
-    
+  	emailExistence.check('contact@spdartes.net', function(error, response){
+		console.log('res: '+response);
+	});  
    
 			
