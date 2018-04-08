@@ -18,6 +18,7 @@
   },
   "bugs": "http://github.com/scippio/email-existence/issues",
   "scripts": {
+    "start": "node --no-warnings testEmailValidation.js",
     "test": "mocha --reporter spec"
   },
   "devDependencies": {
