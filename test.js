@@ -60,7 +60,7 @@ describe('emailExistence', function() {
         this.timeout(30e3);
         emailExistence('contact@spdartes.net', function(err, valid) {
             // expect(err).to.match(/^550/);
-            expect(valid).to.be(false);
+            expect(valid).to.be(true);
             done();
         });
     });
