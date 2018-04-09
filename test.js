@@ -1,5 +1,4 @@
 var emailExistence = require('./index');
-/*
 var expect = require('expect.js');
 
 describe('emailExistence', function() {
@@ -8,8 +7,8 @@ describe('emailExistence', function() {
     });
 
     it('returns false instantly for invalid emails', function(done) {
-        emailExistence('sitesda3lk@gmail.com', function(err, valid) {
-            expect(valid).to.be(true);
+        emailExistence('a@', function(err, valid) {
+            expect(valid).to.be(false);
             done();
         });
     });
@@ -17,7 +16,7 @@ describe('emailExistence', function() {
     it('allows strange formats but that are technically valid', function(done) {
         var ok;
 
-        emailExistence('spdarteshhgr@spdartes.net', function(err, valid) {
+        emailExistence('a+b@b.co', function(err, valid) {
             if (!ok) {
                 throw new Error('should not return immediately');
             }
@@ -29,8 +28,8 @@ describe('emailExistence', function() {
 
     it('recognizes andreas', function(done) {
         this.timeout(30e3);
-        emailExistence('spdartes@spdartes.net', function(err, valid) {
-            //expect(err).to.match(null);
+        emailExistence('andreas.brekken@gmail.com', function(err, valid) {
+            expect(err).to.match(null);
             expect(valid).to.be(true);
             done();
         });
@@ -38,60 +37,55 @@ describe('emailExistence', function() {
 
     it('recognizes gmail+', function(done) {
         this.timeout(30e3);
-        emailExistence('spdarteshhgr@spdartes.net', function(err, valid) {
-            //expect(err).to.match(null);
+        emailExistence('andreas.brekken+spam@gmail.com', function(err, valid) {
+            expect(err).to.match(null);
             expect(valid).to.be(true);
             done();
         });
     });
-    
 
     it('fails on unrecognized domain', function(done) {
         this.timeout(30e3);
-        emailExistence('contact@spdartes.net', function(err, valid) {
-            expect(valid).to.be(true);
+        emailExistence('x@doesnotexist', function(err, valid) {
+            expect(valid).to.be(false);
             // expect(err.message).to.match(/ENOTFOUND/);
             done();
         });
     });
 
+    it('fails on unrecognized domain', function(done) {
+        this.timeout(30e3);
+        emailExistence('x@doesnotexistvft678ijhgfrt6.com', function(err, valid) {
+            expect(valid).to.be(false);
+            // expect(err.message).to.match(/ENOTFOUND/);
+            done();
+        });
+    });
 
-    
-        it('fails on non-existent address', function(done) {
+    it('fails on non-existent address', function(done) {
         this.timeout(30e3);
-        emailExistence('contactjfdtj@spdartes.net', function(err, valid) {
+        emailExistence('x@gmail.com', function(err, valid) {
             // expect(err).to.match(/^550/);
-            expect(valid).to.be(true);
+            expect(valid).to.be(false);
             done();
         });
     });
-    
- 
-        it('fails on non-existent name', function(done) {
+
+    it('fails on non-existent name', function(done) {
         this.timeout(30e3);
-        emailExistence('sitesda3fgderr@gmail.com', function(err, valid) {
+        emailExistence('shouldnotexists@gmail.com', function(err, valid) {
             // expect(err).to.match(/^550/);
-            expect(valid).to.be(true);
+            expect(valid).to.be(false);
             done();
         });
     });
-    
+
     it('recognizes valid hotmail', function(done) {
       this.timeout(30e3);
-      emailExistence('prince-kenitraitrt@hotmail.fr', function(err, valid) {
-        //expect(err).to.match(null);
+      emailExistence('and285@hotmail.com', function(err, valid) {
+        expect(err).to.match(null);
         expect(valid).to.be(true);
-        done();
+        done(err);
       });
     });
-    
-    
 });
-   */
-  	emailExistence.check('contact@spdartes.net', function(error, response){
-		console.log('res: '+response);
-	}); 
-    	emailExistence('contact@spdartes.net', function(error, response){
-		console.log('res: '+response);
-	});  
-			
